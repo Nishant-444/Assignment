@@ -1,0 +1,74 @@
+{
+	"info": {
+		"name": "School Management API",
+		"_postman_id": "abc12345-def6-7890-ghij-klmnopqrstuv",
+		"description": "Postman collection for adding and listing schools.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add School - Example 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Green Valley High School\",\n  \"address\": \"123 Main Street\",\n  \"latitude\": 40.73061,\n  \"longitude\": -73.935242\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/addSchool",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["addSchool"]
+				}
+			}
+		},
+		{
+			"name": "Add School - Example 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Lakeside Elementary\",\n  \"address\": \"456 Lake Road\",\n  \"latitude\": 40.750504,\n  \"longitude\": -73.993439\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/addSchool",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["addSchool"]
+				}
+			}
+		},
+		{
+			"name": "List Schools (sorted by proximity)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/listSchools?latitude=40.73061&longitude=-73.935242",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["listSchools"],
+					"query": [
+						{ "key": "latitude", "value": "40.73061" },
+						{ "key": "longitude", "value": "-73.935242" }
+					]
+				}
+			}
+		}
+	]
+}
