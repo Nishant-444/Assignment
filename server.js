@@ -15,6 +15,8 @@ const db = mysql.createConnection({
 	user: process.env.DB_USER,
 	password: process.env.DB_PASS,
 	database: process.env.DB_NAME,
+	port: process.env.DB_PORT, // <-- THIS LINE IS MISSING
+	ssl: { "rejectUnauthorized": false } // This helps connect to cloud DBs
 });
 
 // Establish connection to the database
